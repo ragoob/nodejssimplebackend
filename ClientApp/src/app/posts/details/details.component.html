@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-lg-12">
         <h1>
-            {{(post| async).title}}
+            {{(post| async)?.title}}
         </h1>
         
         <fieldset>
@@ -11,9 +11,22 @@
                
             </legend>
             <legend>
-                <a [routerLink]="[ '/posts' ]">Back to List</a>
+                <h3>Comments :</h3>
+                <div class="col-lg-12">
+                        <ul>
+                            <li *ngFor="let item of (post| async)?.comments">
+                               <a href="#">
+                                   {{item.email}}
+                               </a> 
+                               {{item.body}}
+                            </li>
+                        </ul>
+                    </div>
+                
             </legend>
+            <a [routerLink]="[ '/posts' ]">Back to List</a>
         </fieldset>
         
     </div>
+   
 </div>
