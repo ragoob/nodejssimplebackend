@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1>
+            {{(post| async).title}}
+        </h1>
+        
+        <fieldset>
+            <legend>
+             
+                <span>desc : {{(post| async)?.body}}</span>
+               
+            </legend>
+            <legend>
+                <a [routerLink]="[ '/posts' ]">Back to List</a>
+            </legend>
+        </fieldset>
+        
+    </div>
+</div>
